@@ -1,13 +1,13 @@
-<center>
+<!-- <center>
 <img src="https://media.giphy.com/media/ToMjGplHPoYqSg7oACc/giphy.gif" alt="" style="max-width: 500px" />
 <a href="http://fontmeme.com/burger-king-font/"><img src="http://fontmeme.com/embed.php?text=Eat-Da-Burger%21&name=Insanibc.ttf&size=100&style_color=000000" alt="Burger King Font"></a>
-</center>
+</center> -->
 <br>
 <br>
 <div class="col-md-4">
-  <center>
+  <!-- <center>
   <a href="http://fontmeme.com/burger-king-font/"><img src="http://fontmeme.com/embed.php?text=Add%20a%20Burger%21&name=Insanibc.ttf&size=20&style_color=000000" alt="Burger King Font"></a>
-  </center>
+  </center> -->
 
 
   <form class="col-md-12" action="/burger/add" method="POST">
@@ -15,16 +15,19 @@
         <label for="burger" style="color: black; font-family: 'Comic Sans MS', cursive, sans-serif">Order Your Burger!</label>
         <input type="text" id="burger" name="user_burger" required>
     </div>
+    <input type="submit" value="Submit Dat Burger"/>
   </form>
 </div>
 
+
 <div class="col-md-4">
   
-  <center>
+<!--   <center>
   <a href="http://fontmeme.com/burger-king-font/"><img src="http://fontmeme.com/embed.php?text=Your%20a%20Burgers%21&name=Insanibc.ttf&size=20&style_color=000000" alt="Burger King Font"></a>
-  </center>
+  </center> -->
 
   <div class="col-md-12 text-center">
+      <p>Ordered</p>
       {{#each burger}}
         {{#unless this.devoured}}
           <form class="col-md-12" action="/burger/update/{{this.id}}?_method=PUT" method="POST">
@@ -38,10 +41,11 @@
 </div>
 
 <div class="col-md-4">
-  <center>
+  <!-- <center>
   <a href="http://fontmeme.com/burger-king-font/"><img src="http://fontmeme.com/embed.php?text=You%20Devoured%21&name=Insanibc.ttf&size=20&style_color=000000" alt="Burger King Font"></a>
-  </center>
+  </center> -->
   <div class="col-md-12 text-center">
+  <p>Devoured</p>
     {{#each burger}}
       {{#if this.devoured}}
           <form class="col-md-12" action="/burger/delete/{{this.id}}?_method=PUT" method="POST">
